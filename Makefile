@@ -1,3 +1,7 @@
+# This export fixes an issues with the latest Xcode beta.
+export XCODE_XCCONFIG_FILE=$PWD/tmp.xcconfig
+#carthage update --platform iOS --no-use-binaries --cache-builds
+
 PRODUCT_NAME := Pokedex
 SCHEME_NAME := ${PRODUCT_NAME}
 PROJECT_NAME := ${PRODUCT_NAME}.xcodeproj
@@ -7,7 +11,7 @@ TEST_SDK := iphonesimulator
 TEST_CONFIGURATION := Debug
 TEST_PLATFORM := iOS Simulator
 TEST_DEVICE ?= iPhone 11 Pro Max
-TEST_OS ?= 14.0
+TEST_OS ?= 13.4.1
 TEST_DESTINATION := 'platform=${TEST_PLATFORM},name=${TEST_DEVICE},OS=${TEST_OS}'
 
 .PHONY: bootstrap
@@ -26,6 +30,8 @@ update-tools:
 
 .PHONY: project
 project:
+	mint run Carthage/Carthage carthage bootstrap --platform iOS --cache-builds
+	echo 'mint run Carthage/Carthage carthage update --platform iOS --use-no-binaries --cache-builds'
 	mint run SwiftGen/SwiftGen swiftgen
 	mint run yonaskolb/XcodeGen xcodegen generate
 

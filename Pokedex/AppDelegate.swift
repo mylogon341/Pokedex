@@ -9,6 +9,7 @@
 import Domain
 import Presentation
 import UIKit
+import Nuke
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         self.setupWindowIfNeeded()
+        // Configure cache
+        DataLoader.sharedUrlCache.diskCapacity = 150
+        DataLoader.sharedUrlCache.memoryCapacity = 50
+
         return true
     }
 }

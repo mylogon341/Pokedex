@@ -22,6 +22,10 @@ public struct PokemonDetailModel {
 
     public let stats: [PokemonStatus]
 
+    public let gameIndicies: [VersionGameIndex]
+
+    public let moves: [PokemonDetailResponse.PokemonMove]
+
     init(_ response: PokemonDetailResponse) {
         self.number = response.id
         self.name = response.name
@@ -29,10 +33,16 @@ public struct PokemonDetailModel {
         self.typeHex = response.types.sorted { $0.slot < $1.slot }.compactMap { PokemonType($0) }.first?.hex ?? ""
         self.information = Information(response)
         self.stats = response.stats.compactMap { PokemonStatus(name: $0.stat.name, value: $0.baseStat) }.sorted { $0.type.priority < $1.type.priority }
+        self.moves = response.moves
+        self.gameIndicies = response.gameIndices
     }
 }
 
 extension PokemonDetailModel {
+
+    public var introducedInGen: VersionGameIndex? {
+        self.gameIndicies.first
+    }
 
     public struct Information {
 

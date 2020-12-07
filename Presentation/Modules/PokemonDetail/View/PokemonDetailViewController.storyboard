@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H6d-Mt-lva">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H6d-Mt-lva">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="498" width="414" height="336"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IAW-nj-oDN">
-                                        <rect key="frame" x="0.0" y="0.0" width="828" height="336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1242" height="336"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="336" id="xch-AA-xUl"/>
                                         </constraints>
@@ -114,7 +114,7 @@
                             <constraint firstItem="FSh-HR-NvE" firstAttribute="leading" secondItem="Ciq-0w-1VD" secondAttribute="leading" priority="999" constant="48" id="G2X-Wt-GvW"/>
                             <constraint firstItem="FSh-HR-NvE" firstAttribute="centerX" secondItem="Ciq-0w-1VD" secondAttribute="centerX" id="Jrd-RT-eNx"/>
                             <constraint firstItem="loX-aG-40s" firstAttribute="leading" secondItem="Ciq-0w-1VD" secondAttribute="leading" constant="16" id="KIO-Ww-pCN"/>
-                            <constraint firstItem="IAW-nj-oDN" firstAttribute="width" secondItem="Xrt-ah-jnP" secondAttribute="width" multiplier="2" id="L4B-4I-wJa"/>
+                            <constraint firstItem="IAW-nj-oDN" firstAttribute="width" secondItem="Xrt-ah-jnP" secondAttribute="width" multiplier="3" id="L4B-4I-wJa"/>
                             <constraint firstItem="4YY-SC-Pw4" firstAttribute="leading" secondItem="XAD-Ka-nFV" secondAttribute="leading" id="Mmk-sx-bhC"/>
                             <constraint firstItem="Xrt-ah-jnP" firstAttribute="top" secondItem="loX-aG-40s" secondAttribute="bottom" constant="24" id="NO1-zF-ZY2"/>
                             <constraint firstItem="Ciq-0w-1VD" firstAttribute="bottom" secondItem="CN9-Py-IkK" secondAttribute="bottom" id="P2Q-vP-Svj"/>

@@ -27,7 +27,14 @@ private struct ImageDataStoreImpl: ImageDataStore {
     let pipeline: ImagePipeline
 
     func load(from url: URL, completion: @escaping Completion) {
-        self.pipeline.loadData(with: ImageRequest(url: url)) { result in
+        let request = ImageRequest(url: url)
+
+        if let cache = DataLoader.sharedUrlCache.cachedResponse(for: request.urlRequest) {
+            completion(.success(cache.data))
+            return
+        }
+
+        self.pipeline.loadData(with: request) { result in
             switch result {
             case .success(let response):
                 completion(.success(response.data))

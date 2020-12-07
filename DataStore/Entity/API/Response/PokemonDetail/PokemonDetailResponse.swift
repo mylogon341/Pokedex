@@ -194,6 +194,13 @@ extension PokemonDetailResponse.PokemonMove.VersionGroupDetail {
         public let name: String
 
         public let url: String
+
+        public var group: Int {
+            Int(url
+                    .components(separatedBy: "/")
+                    .filter({ $0.isEmpty == false })
+                    .last ?? "-1") ?? -1
+        }
     }
 }
 

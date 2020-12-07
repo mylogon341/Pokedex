@@ -8,6 +8,8 @@
 import DataStore
 import Foundation
 
+typealias GenerationGroup = (name: String, pokemon: [PokemonListModel.Pokemon])
+
 // MARK: - PokemonListModel
 public struct PokemonListModel {
 

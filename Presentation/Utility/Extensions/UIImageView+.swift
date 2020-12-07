@@ -20,16 +20,24 @@ extension UIImageView {
         guard let url = url else {
             return
         }
-        Nuke.loadImage(with: url,
+
+        let request = ImageRequest(url: url)
+        if let cached = DataLoader.sharedUrlCache.cachedResponse(for: request.urlRequest),
+           let image = UIImage(data: cached.data) {
+            completion?(.success(image))
+            self.image = image
+            return
+        }
+
+        Nuke.loadImage(with: request,
                        options: ImageLoadingOptions(placeholder: placeholder),
-                       into: self,
-                       completion: {
-                        switch $0 {
-                        case .success(let response):
-                            completion?(.success(response.image))
-                        case .failure(let error):
-                            completion?(.failure(error))
-                        }
-                       })
+                       into: self) { result in
+            switch result {
+            case .success(let response):
+                completion?(.success(response.image))
+            case .failure(let error):
+                completion?(.failure(error))
+            }
+        }
     }
 }

@@ -53,12 +53,7 @@ extension PokemonDetailViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 
@@ -69,13 +64,17 @@ extension PokemonDetailViewController: PokemonDetailView {
         self.pokemonTypeImageView.tintColor = UIColor(hex: model.typeHex)
         self.pokemonImageView.loadImage(with: model.imageUrl, placeholder: Asset.monsterball.image)
         self.numberLabel.text = "No.\(model.number)"
-        self.nameLabel.text = model.name
+        self.nameLabel.text = model.name.apiNameFixed
 
         let informationView = PokemonDetailInformationView(model.information)
         self.contentsStackView.addArrangedSubview(informationView)
 
         let statsView = PokemonDetailStatsView(model.stats)
         self.contentsStackView.addArrangedSubview(statsView)
+
+        let movesView = PokemonMoveView(moves: model.moves)
+
+        self.contentsStackView.addArrangedSubview(movesView)
 
         self.pageControl.numberOfPages = self.contentsStackView.arrangedSubviews.count
     }

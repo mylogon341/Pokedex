@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokemonMoveView" customModule="Presentation" customModuleProvider="target">
+            <connections>
+                <outlet property="genButton" destination="X2P-f3-vo2" id="4Qk-3a-Db7"/>
+                <outlet property="tableview" destination="uuh-7c-Puw" id="nwt-9X-HCH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uuh-7c-Puw">
+                    <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="jgP-mY-vg0"/>
+                        <outlet property="delegate" destination="-1" id="Wwt-2L-GYh"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2P-f3-vo2">
+                    <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="yBF-yF-tez"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="genTapped" destination="-1" eventType="touchUpInside" id="4Pu-GQ-a9t"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="X2P-f3-vo2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0ua-I9-oVG"/>
+                <constraint firstItem="X2P-f3-vo2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GcJ-Fe-raj"/>
+                <constraint firstItem="uuh-7c-Puw" firstAttribute="top" secondItem="X2P-f3-vo2" secondAttribute="bottom" id="KOo-xF-fJd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uuh-7c-Puw" secondAttribute="trailing" id="bHr-Gi-zb5"/>
+                <constraint firstItem="X2P-f3-vo2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="e0L-JI-54z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uuh-7c-Puw" secondAttribute="bottom" id="sTT-xs-Gzp"/>
+                <constraint firstItem="uuh-7c-Puw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="t2S-9J-FIO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </view>
+    </objects>
+</document>
